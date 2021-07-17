@@ -32,7 +32,7 @@ return [
 
         'options' => [
             'cluster' => 'redis',
-            'prefix' => Str::slug('discuz', '_').'_database_'
+            'prefix' => Str::slug('discuz', '_') . '_database_',
         ],
 
         'default' => [
@@ -40,7 +40,7 @@ return [
             'host' => '127.0.0.1',
             'password' => '',
             'port' => 6379,
-            'database' => 0
+            'database' => 0,
         ],
 
         'cache' => [
@@ -48,7 +48,7 @@ return [
             'host' => '127.0.0.1',
             'password' => '',
             'port' => 6379,
-            'database' => 1
+            'database' => 1,
         ],
     ],
     //缓存系统配置
@@ -110,13 +110,13 @@ return [
             ],
             'attachment' => [
                 'driver' => 'local',
-                'root'   => storage_path('app'),
-                'url'    => 'attachment'
+                'root' => storage_path('app'),
+                'url' => 'attachment',
             ],
             'attachment_cos' => [
                 'driver' => 'cos',
-                'root'   => storage_path('app/public/attachment'),
-                'url'    => 'attachment'
+                'root' => storage_path('app/public/attachment'),
+                'url' => 'attachment',
             ],
             'cos' => [
                 'driver' => 'cos',
@@ -124,13 +124,13 @@ return [
                 'schema' => 'https', //协议头部，默认为http
                 'bucket' => '',
                 'read_from_cdn' => false, //是否从cdn读取，如果为true ， 设置cdn地址
-                'credentials'=> [
-                    'secretId'  => '',  //"云 API 密钥 SecretId";
+                'credentials' => [
+                    'secretId' => '',  //"云 API 密钥 SecretId";
                     'secretKey' => '', //"云 API 密钥 SecretKey";
                     'token' => '' //"临时密钥 token";
-                ]
-            ]
-        ]
+                ],
+            ],
+        ],
     ],
     'queue' => [
         'default' => 'redis',
@@ -141,11 +141,11 @@ return [
                 'queue' => 'REDIS_QUEUE',
                 'retry_after' => 90,
                 'block_for' => null,
-            ]
-        ]
+            ],
+        ],
     ],
     'excel' => [
-        'root' => storage_path('public/exports')
+        'root' => storage_path('public/exports'),
     ],
     // 加载ServiceProvider
     'providers' => [
@@ -174,13 +174,13 @@ return [
 
             // 默认可用的发送网关
             'gateways' => [
-                'qcloud'
+                'qcloud',
             ],
         ],
         // 可用的网关配置
         'gateways' => [
             'errorlog' => [
-                'file' => storage_path('log/easy-sms.log')
+                'file' => storage_path('log/easy-sms.log'),
             ],
             'qcloud' => [
                 'sdk_app_id' => '', // SDK APP ID
@@ -199,9 +199,9 @@ return [
             'Access-Control-Allow-Headers' => 'Origin, Content-Type, Cookie, X-CSRF-TOKEN, Accept, Authorization, X-XSRF-TOKEN, X-HTTP-Method-Override',
             'Access-Control-Expose-Headers' => 'Authorization, authenticated',
             'Access-Control-Allow-Methods' => 'GET, POST, PATCH, PUT, OPTIONS, DELETE',
-            'Access-Control-Allow-Credentials' => 'true'
+            'Access-Control-Allow-Credentials' => 'true',
 
-        ]
+        ],
     ],
     // 开启部分中间件中的 sql 缓存
     'middleware_cache' => false,
